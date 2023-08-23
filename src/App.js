@@ -1,23 +1,32 @@
-import cat from './cat.png';
 import './App.css';
+import MyImg from './../src/assets/img.jpg';
+
+var bio = [
+  {
+    main: " About Me",
+    data:" Hello! I am currently attanding W3-Schools's web devloper bootcamp. Where I learn how to build this page with react app."
+  },
+  {
+    main: " Contact Me",
+    data:" Email : kppatel@gmail.com"
+  }
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={cat} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img className="img" src={MyImg} alt="Keyur's Photo"/>
+      <h1> Keyur Patel</h1>
+      <h2>Web Devloper to Be </h2>
+      {bio.map((item) => {
+        return (
+          <div className="d1">
+            <h3>{item.main}</h3>
+            <hr/>
+            <p>{item.data}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
